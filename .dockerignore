@@ -1,0 +1,47 @@
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+.pytest_cache/
+
+# Virtual environments
+venv/
+env/
+ENV/
+
+# Secrets: never baked into the image (pass them at run time, see README.md)
+.env
+*.env
+.env.*
+*.pem
+*.key
+
+# Ingestion output and logs
+data/
+logs/
+
+# Not needed in the container
+scripts/
+tests/
+.github/
+.claude/
+
+# Development files
+.git/
+.gitignore
+*.md
+*.bat
+*.ps1
+*.sh
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS files
+.DS_Store
+Thumbs.db

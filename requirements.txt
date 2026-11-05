@@ -1,0 +1,28 @@
+# All Python packages for the project: the web service, and the pipeline scripts in scripts/.
+# The Docker image installs this whole file even though the container never runs the pipeline scripts, so there is
+# only one file to maintain. Versions are not pinned except where a range is needed.
+
+# Web service
+fastapi
+uvicorn
+pydantic
+python-dotenv
+
+# Language models and embeddings (OpenAI / Azure OpenAI, and Claude etc. through AWS Bedrock)
+langchain-core
+langchain-openai
+boto3
+httpx
+requests
+
+# Vector database (2.5+ is needed for BM25 full-text search)
+pymilvus>=2.6.0,<3.0
+langchain-milvus
+
+# Local cross-encoder reranker (pulls in PyTorch; the Dockerfile installs the CPU-only build first)
+sentence-transformers>=3.0
+
+# Pipeline scripts (scripts/): text splitting, PDF text extraction, web scraping
+langchain-text-splitters
+pypdf
+selenium
